@@ -1,0 +1,78 @@
+.menu-page {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 1.75rem;
+}
+
+.menu-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.menu-header p {
+  margin: 0.5rem 0 0;
+  color: var(--text);
+}
+
+.menu-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.saved-link,
+.logout-button {
+  border: none;
+  border-radius: 0.95rem;
+  padding: 0.95rem 1.25rem;
+  background: var(--code-bg);
+  color: var(--text-h);
+  border: 1px solid var(--border);
+}
+
+.badge {
+  margin-left: 0.6rem;
+  background: var(--accent-bg);
+  color: var(--text-h);
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.85rem;
+}
+
+.menu-summary {
+  margin: 1.5rem 0;
+  color: var(--text);
+}
+
+.menu-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.empty-state {
+  padding: 3rem 1.5rem;
+  background: var(--code-bg);
+  border-radius: 1.5rem;
+  text-align: center;
+  color: var(--text);
+}
+
+@media (max-width: 640px) {
+  .menu-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .menu-actions {
+    flex-wrap: wrap;
+  }
+}
