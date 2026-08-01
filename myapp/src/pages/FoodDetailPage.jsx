@@ -27,14 +27,20 @@ export default function FoodDetailPage() {
   return (
     <main className="detail-page">
       <header className="detail-header">
-        <button type="button" className="secondary-button" onClick={() => navigate('/')}>Back to Menu</button>
+            <button type="button" className="secondary-button" onClick={() => navigate(-1)}>Back to Menu</button>
         <div className="detail-links">
           <Link to="/saved-recipes" className="secondary-button">
             Saved Recipes <span className="badge">{savedCount}</span>
           </Link>
-          <button type="button" className="primary-button" onClick={() => toggleSaved(item.id)}>
-            {saved ? 'Saved' : 'Save Recipe'}
-          </button>
+              <button
+                type="button"
+                className={`primary-button ${saved ? 'saved' : ''}`}
+                onClick={() => toggleSaved(item.id)}
+                aria-pressed={saved}
+                aria-label={saved ? 'Unsave recipe' : 'Save recipe'}
+              >
+                {saved ? 'Saved' : 'Save Recipe'}
+              </button>
         </div>
       </header>
 
@@ -42,12 +48,20 @@ export default function FoodDetailPage() {
         <div className="detail-main">
           <div className="detail-image-wrapper">
             <img src={item.image} alt={item.name} />
-            <span className={`diet-badge ${item.isVeg ? 'veg' : 'nonveg'}`}>
-              {item.isVeg ? 'Veg' : 'Non-Veg'}
-            </span>
           </div>
           <div className="detail-info">
-            <span className="category-label">{item.category.toUpperCase()}</span>
+            <div className="detail-tags">
+              <span className="detail-tag">{item.category.toUpperCase()}</span>
+              <span className={`detail-tag ${item.isVeg ? 'veg' : 'nonveg'}`}>
+                {item.isVeg ? (
+                  <>
+                    Veg <span className="detail-tag-icon" aria-hidden="true">🍃</span>
+                  </>
+                ) : (
+                  'Non-Veg'
+                )}
+              </span>
+            </div>
             <h1>{item.name}</h1>
             <p className="servings-text">{item.servings}</p>
             <p className="detail-description">{item.fullDescription}</p>

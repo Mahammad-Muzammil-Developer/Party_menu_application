@@ -36,6 +36,10 @@
   background: var(--code-bg);
   color: var(--text-h);
   border: 1px solid var(--border);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .badge {

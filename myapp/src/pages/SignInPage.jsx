@@ -75,7 +75,7 @@ export default function SignInPage() {
           </label>
 
           <button type="submit" className="signin-button" disabled={loading}>
-            {loading ? 'Signing in…' : 'Sign In'}
+            {loading ? 'Signing in...' : 'Sign In'}
           </button>
         </form>
       </section>

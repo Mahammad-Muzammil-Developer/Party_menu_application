@@ -22,7 +22,7 @@ export default function SavedRecipesPage() {
 
       {savedItems.length === 0 ? (
         <section className="empty-state">
-          <p>No saved recipes yet.</p>
+          <p>No saved recipes yet</p>
           <Link to="/" className="primary-button">
             Browse the menu
           </Link>

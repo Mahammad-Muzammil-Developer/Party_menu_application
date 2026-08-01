@@ -32,9 +32,10 @@
 
 .chip:hover,
 .chip-active {
-  border-color: var(--accent-border);
-  background: var(--accent-bg);
-  color: var(--text-h);
+  border-color: rgba(251, 146, 60, 0.6);
+  background: linear-gradient(180deg, #fb923c 0%, #ea580c 100%);
+  color: #ffffff;
+  box-shadow: 0 10px 20px rgba(251, 146, 60, 0.18);
 }
 
 .search-bar {

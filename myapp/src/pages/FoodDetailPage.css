@@ -24,18 +24,75 @@
   border: none;
   border-radius: 0.95rem;
   padding: 0.95rem 1.25rem;
+  text-decoration: none;
 }
 
-.primary-button {
-  background: #4f46e5;
-  color: white;
+.detail-page .primary-button {
+  background: linear-gradient(180deg,#fb923c 0%,#ea580c 100%) !important;
+  color: #ffffff !important;
   padding: 0.75rem 1.1rem;
+  box-shadow: 0 10px 26px rgba(251,146,60,0.25);
+  border: 1px solid rgba(251,146,60,0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.detail-page .primary-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(251,146,60,0.3);
+}
+
+/* saved state (matches screenshot green saved button) */
+.detail-page .primary-button.saved {
+  background: linear-gradient(180deg,#22c55e,#16a34a) !important;
+  border: 1px solid rgba(16,185,129,0.9);
+  color: #ecfdf5 !important;
+  box-shadow: 0 6px 18px rgba(16,185,129,0.18);
 }
 
 .secondary-button {
-  background: #eef2ff;
-  color: #3730a3;
+  background: #1f2937;
+  color: #f8fafc;
   padding: 0.75rem 1.1rem;
+}
+
+.detail-tags {
+  display: inline-flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.detail-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 0.22rem 0.6rem;
+  border-radius: 0.85rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: capitalize;
+  background: rgba(255, 255, 255, 0.08);
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.detail-tag.veg {
+  background: rgba(16, 185, 129, 0.18);
+  color: #d1fae5;
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+.detail-tag.nonveg {
+  background: rgba(239, 68, 68, 0.18);
+  color: #fee2e2;
+  border-color: rgba(239, 68, 68, 0.35);
+}
+
+.detail-tag.nonveg {
+  background: rgba(239, 68, 68, 0.18);
+  color: #fca5a5;
 }
 
 .detail-card {
@@ -61,7 +118,7 @@
 
 .detail-image-wrapper img {
   width: 100%;
-  height: 320px;
+  height: 360px;
   object-fit: cover;
 }
 
@@ -126,6 +183,15 @@
   background: rgba(255,255,255,0.02);
   border: 1px solid rgba(255,255,255,0.02);
   color: var(--text);
+}
+
+/* make ingredient qty visually subtle and right-aligned like screenshot */
+.ingredients-panel .ingredient-qty {
+  background: transparent;
+  color: var(--text);
+  padding: 0;
+  border-radius: 0;
+  font-weight: 600;
 }
 
 .ingredients-panel li::marker {
